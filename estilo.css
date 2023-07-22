@@ -1,0 +1,4 @@
+#div-contenedor {
+    display: grid;
+    place-content: center;
+}
