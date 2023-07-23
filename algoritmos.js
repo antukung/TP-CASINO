@@ -9,6 +9,8 @@ const lista=document.querySelector("#lista");
 
 let saldoPesos=parseFloat(prompt ("ingrese la cantidad de pesos que quiere jugar"));
 let nombreJuego=prompt ("ingresesu nombre de jugador");
+let saldoDeJuegoGanador3= saldoPesos*0.2;
+let saldoDeJuegoGanador2=saldoPesos*0.1;
 
 if (saldoPesos>0 && nombreJuego!=="") {
     nombrePromp.innerHTML=`${nombreJuego}`;
@@ -56,9 +58,38 @@ function imagen3() {
 function generarLista(numeroAleatorio, numeroAleatorio2, numeroAleatorio3) {
     if (numeroAleatorio === numeroAleatorio2 && numeroAleatorio2 === numeroAleatorio3) {
         lista.innerHTML += `<p>TENES 3 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador3;
     } else if (numeroAleatorio === numeroAleatorio2 || numeroAleatorio2 === numeroAleatorio3 || numeroAleatorio === numeroAleatorio3) {
         lista.innerHTML += `<p>TENES 2 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador2;
     } else {
         lista.innerHTML += `<p>NO TENES NINGUNA IMAGEN REPETIDA</p>`;
+        saldoPesos -= saldoDeJuegoGanador3;
     }
+    plataPromp.innerHTML = `${saldoPesos}`;
+}
+function generarLista(numeroAleatorio, numeroAleatorio2, numeroAleatorio3) {
+    if (numeroAleatorio === numeroAleatorio2 && numeroAleatorio2 === numeroAleatorio3) {
+        lista.innerHTML += `<p>TENES 3 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador3;
+    } else if (numeroAleatorio === numeroAleatorio2 || numeroAleatorio2 === numeroAleatorio3 || numeroAleatorio === numeroAleatorio3) {
+        lista.innerHTML += `<p>TENES 2 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador2;
+    } else {
+        lista.innerHTML += `<p>NO TENES NINGUNA IMAGEN REPETIDA</p>`;
+        saldoPesos -= saldoDeJuegoGanador3;
+    }
+    plataPromp.innerHTML = `${saldoPesos}`;
+}function generarLista(numeroAleatorio, numeroAleatorio2, numeroAleatorio3) {
+    if (numeroAleatorio === numeroAleatorio2 && numeroAleatorio2 === numeroAleatorio3) {
+        lista.innerHTML += `<p>TENES 3 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador3;
+    } else if (numeroAleatorio === numeroAleatorio2 || numeroAleatorio2 === numeroAleatorio3 || numeroAleatorio === numeroAleatorio3) {
+        lista.innerHTML += `<p>TENES 2 IMAGENES REPETIDAS</p>`;
+        saldoPesos += saldoDeJuegoGanador2;
+    } else {
+        lista.innerHTML += `<p>NO TENES NINGUNA IMAGEN REPETIDA</p>`;
+        saldoPesos -= saldoDeJuegoGanador3;
+    }
+    plataPromp.innerHTML = `${saldoPesos}`;
 }
