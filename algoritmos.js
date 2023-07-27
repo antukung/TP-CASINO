@@ -33,6 +33,7 @@ function verifica() {
     const numeroAleatorio2 = imagen2();
     const numeroAleatorio3 = imagen3();
     generarLista(numeroAleatorio, numeroAleatorio2, numeroAleatorio3);
+    teQudasteSinPlata()
      
 }
 
@@ -92,4 +93,11 @@ function generarLista(numeroAleatorio, numeroAleatorio2, numeroAleatorio3) {
         saldoPesos -= saldoDeJuegoGanador3;
     }
     plataPromp.innerHTML = `${saldoPesos}`;
+}
+
+function teQudasteSinPlata() {
+    if (saldoPesos<=0) {
+        cuerpoPagina.innerHTML=`<h1>TE QUEDASTE SIN SALDO CARGA SALDO PARA VOLVER A JUGAR </h1>`
+    }
+    
 }
